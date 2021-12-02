@@ -1,0 +1,194 @@
+body {
+    margin: 0;
+    background: rgb(170, 170, 170);
+    font-size: 16;
+    line-height: 1.6;
+    color: rgb(0, 0, 0);
+    
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    margin: 0;
+}
+
+.app{
+    width: 100%;
+    height: 100vh;
+    background:rgb(184, 184, 184)
+}
+
+.addButton{
+    width: 100px;
+    height: 20px;
+}
+.deleteButton{
+    width: 100px;
+    height: 20px;
+}
+
+.todo-list{
+    width: 100%;
+    max-width: 1200px ;
+    margin: 0 auto;
+    text-align: center;
+}
+
+
+.todo-list__item{
+    width: 500px;
+    height: 40px;
+    border-radius: 8px;
+    margin: 20px 20px 20px 20px;
+    background-color: rgb(240, 212, 212); 
+    float: center; 
+}
+.leftblock{
+    width: 250px;
+    height: 40px;
+    float: left;
+}
+.taskTitle{
+    float: left;
+    width: 125px;
+    height: 40px;
+    margin: 0px;
+    font-size: 20px;
+    text-align: center;
+    margin-top: 7px;
+}
+
+.rightblock{
+    width: 250px;
+    height: 40px;
+    float: right;
+}
+
+.todo-list__item-button{
+    width: 100px;
+    height: 20px;
+    background-color: rgb(207, 207, 207);
+    margin-top: 8px;
+}
+.todo-list__item-button-delete{
+    width: 130px;
+    height: 20px;
+    background-color: rgb(207, 207, 207);
+    margin-top: 8px;
+}
+
+
+
+
+
+.todo-list__Dialog-Window{
+    border-style:solid;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    height: 400px;
+    background-color: rgb(216, 255, 214);
+    margin-left: 150px;
+    margin-right: auto;
+    top: 10px;
+    position: fixed;
+    display: block;
+    
+}
+
+.hidden {
+    display: none;
+}
+
+.titleDialog{
+    text-align: center;
+    font-size:30px;
+}
+.titleDialog2{
+    text-align: center;
+    font-size:25px;
+}
+
+.buttonbar{
+    width: 460;
+    height: 25;
+    margin: 0 auto;
+
+
+}
+.todo-list__item-close-button {
+    float: center;
+    border-style:solid;
+    border-radius: 5px;
+    background-color: rgb(151, 151, 151);
+    margin-left: 35px;
+    margin-right: auto;
+    margin-bottom: 5px;
+    font-size: 25px;
+    position: relative;
+    text-align: center;
+    padding: 1px 20px;
+
+
+}
+
+.textwindow{
+    border-radius: 10px;
+    border-style:solid;
+    width: 460px;
+    height: 250px;
+    color: rgb(0, 0, 0);
+    background-color: rgb(241, 255, 247);
+    margin-top: auto;
+    margin-left: auto;
+    margin-bottom: auto;
+    margin-right: auto;
+
+}
+
+.text{
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.taskTitle{
+    font-size: 15px;
+
+}
+.taskText{
+    font-size: 15px;
+}
+
+
+ .buttonsbar{
+     width: 100;
+     height: 40;
+ }
+ .adbutton{
+     width: 40;
+     height: 30;
+ }
+
+ .inputform{
+     width: 100%;
+     height: 100px;
+ }
+
+
+ .titleform{
+     width: 400px;
+     height: 150px;
+ }
+ .deletetitleform{
+     width: 5px;
+     height: 5px;
+     background-color: chartreuse;
+     z-index: 100;
+ }
