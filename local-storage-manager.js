@@ -1,41 +1,75 @@
 (function() {
- 
-tasks = "tasks"
+    const { createAndRenderListItem } = window.listitem
+    const getTasks = () => window.task.tasks
 
-const getItem=(dataname, searchname)=>{
-    dataname =  JSON.parse(localStorage.getItem(searchname))
-    return dd
-}
 
-const setItem=(dataname, setmame)=>{
-    dataname = JSON.stringify(localStorage.setItem(setmame,sd))
-}
 
-const createData=(setname)=>{
-    data =[]
-    data = JSON.stringify(localStorage.setItem(setname,data))
-}
 
-const checkData =(searchname)=>{
-    if (localStorage.getItem(searchname)){
-        let a = confirm("есть локальные данные, Загрузить? В случае отмены данные будут удалены")
 
-        if(a){
-        getItem(data,"tasks")
-        return data
-        }else{
-            localStorage.clear()
-        }
 
-    }else{
-        createData("tasks")
-        alert("нет локальных данных, был создан массив")
-        }
-}
+
+
+    const localStorageManager =()=>{
+
+        return{
+
+            findAndDeleteElement (value,id) {
+                value = getItem("tasks")
+                for ( let i=0 ; i<value.lendth ; i++){
+                    let values = Object.values(data[i])
+                    for(let b=0 ; b<values.length ; b++){
+                        if (id === values[b]){
+                            value.splice(i,1)
+                            alert(`найден объект с id ${id}`)
+                        }
+                    }
+                }
+            },                                                     
+            
+            getItem (name, _default) {
+                const value = localStorage.getItem(name)
+                console.log(value)
+                if (value!==null){
+                    console.log(JSON.parse(value))
+                    return JSON.parse(value)
+                    
+                }
+                return _default
+
+            
+            },
+        
+            setItem (key, value) {
+                localStorage.setItem(key, JSON.stringify(value))
+            },
+
+            createNewElementsfromLS (tasks){
+                console.log(tasks)
+                console.log(tasks.length)
+                for ( i = 0; i<tasks.length; i++){
+                    const task = tasks[i]
+                    createAndRenderListItem(task)
+                    console.log('создаем элементы по массиву')
+
+                    
+
+                }
+            },
+
+
+
+            createElement () {
+        
+                setItem(addElementToData(getItem("tasks"),createNewTask()),"tasks")
+                
+            }
     
-a = getItem("tasks")
-    window.uiElmenst.getItem = getItem
-    window.uiElmenst.setItem = setItem
-    window.uiElmenst.checkData = checkData
-    window.uiElmenst.createData = createData
+
+        }
+    }
+
+    window.manager.lsManager = localStorageManager()
+    
+   
+
 })()

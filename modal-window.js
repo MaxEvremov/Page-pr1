@@ -6,9 +6,6 @@
 
     const createDialog = () => {
         let dialogElement = null;
-        let titleDialog = null;
-        let titleDialog2 = null;
-        let text = null;
 
         return {
             show() {
