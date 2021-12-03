@@ -42,16 +42,19 @@
                 const titleform = document.createElement('input')
                 titleform.classList.add = ("titleform")
                 titleform.id = ('titleform')
+                titleform.setAttribute('placeholder',"Заголовок")
                 inputform.appendChild(titleform)
 
                 const dateform = document.createElement('input')
                 dateform.classList.add = ('dateform')
                 dateform.id = ('dateform')
+                dateform.setAttribute('placeholder',"Дата окночания")
                 inputform.appendChild(dateform)
 
                 const textform = document.createElement('input')
                 textform.classList.add = ('textform')
                 textform.id = ('textform')
+                textform.setAttribute('placeholder',"Текст задания")
                 inputform.appendChild(textform)
 
 

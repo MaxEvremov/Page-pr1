@@ -7,7 +7,6 @@
     const lsManager = getLsManager()
 
     let tasks = lsManager.getItem('tasks', [])
-    console.log(tasks)
 
     window.task.tasks = tasks
 

@@ -1,13 +1,5 @@
 (function() {
     const { createAndRenderListItem } = window.listitem
-    const getTasks = () => window.task.tasks
-
-
-
-
-
-
-
 
     const localStorageManager =()=>{
 
@@ -44,7 +36,6 @@
             },
 
             createNewElementsfromLS (tasks){
-                console.log(tasks)
                 console.log(tasks.length)
                 for ( i = 0; i<tasks.length; i++){
                     const task = tasks[i]

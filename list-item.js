@@ -1,5 +1,6 @@
 (function(){
-    const { taskDialog } = window.uiElements
+    const _taskDialog = () => window.uiElements.taskDialog
+    const getTasks = () => window.task.tasks
     
     
     const createListItem = (task) => {
@@ -40,13 +41,43 @@
                 rightblock.appendChild(toDoListItemElementButtonDelete)
 
                 const showTaskDialog = () => {
+                    const taskDialog = _taskDialog()
                     taskDialog.show()
                     taskDialog.dialogtitle(task.title)
                     taskDialog.dialogdate(task.date)
                     taskDialog.dialogtext(task.text)
                 }
+
+                const deleteElement = () => {
+                    container.removeChild(toDoListItemElement)
+                    id = toDoListItemElement.id
+                    console.log(id)
+
+                    findAndDeleteElement = (id) => {
+                        
+                        let tasks = getTasks()
+
+                        for ( let i=0 ; i<tasks.length ; i++){
+
+                            let values = Object.values(tasks[i])
+
+                            for(let b=0 ; b<values.length ; b++){
+
+                                if (+id === +values[b]){
+
+                                    tasks.splice(i,1)
+                                    
+                                }
+                            }
+                        }
+                    }
+
+                    findAndDeleteElement(id)
+                }
+
                 toDoListItemElementButton.addEventListener("click", showTaskDialog)
-                //toDoListItemElementButtonDelete.addEventListener("click", deleteElement)
+                toDoListItemElementButtonDelete.addEventListener("click", deleteElement)
+                
                 container.appendChild(toDoListItemElement)
             }
         }
