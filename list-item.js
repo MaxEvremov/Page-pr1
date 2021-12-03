@@ -1,4 +1,6 @@
-(function(){
+(function () {
+    'use strict'
+
     const _taskDialog = () => window.uiElements.taskDialog
     const getTasks = () => window.task.tasks
     
@@ -77,7 +79,7 @@
 
                 toDoListItemElementButton.addEventListener("click", showTaskDialog)
                 toDoListItemElementButtonDelete.addEventListener("click", deleteElement)
-                
+
                 container.appendChild(toDoListItemElement)
             }
         }

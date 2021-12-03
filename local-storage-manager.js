@@ -1,11 +1,12 @@
-(function() {
+(function () {
+    'use strict'
+
     const { createAndRenderListItem } = window.listitem
 
-    const localStorageManager =()=>{
-
+    const localStorageManager = () => {
         return{
 
-            findAndDeleteElement (value,id) {
+            findAndDeleteElement (value, id) {
                 value = getItem("tasks")
                 for ( let i=0 ; i<value.lendth ; i++){
                     let values = Object.values(data[i])
@@ -19,48 +20,36 @@
             },                                                     
             
             getItem (name, _default) {
-                const value = localStorage.getItem(name)
-                console.log(value)
-                if (value!==null){
-                    console.log(JSON.parse(value))
-                    return JSON.parse(value)
+                const value = localStorage.getItem ( name )
+                console.log ( value )
+                if ( value !== null ){
+                    console.log ( JSON.parse ( value ) )
+                    return JSON.parse ( value )
                     
                 }
                 return _default
-
-            
             },
         
             setItem (key, value) {
-                localStorage.setItem(key, JSON.stringify(value))
+                localStorage.setItem (key, JSON.stringify ( value ) )
             },
 
-            createNewElementsfromLS (tasks){
-                console.log(tasks.length)
-                for ( i = 0; i<tasks.length; i++){
+            createNewElementsfromLS ( tasks ) {
+                console.log ( tasks.length )
+                for ( i = 0; i<tasks.length; i++ ) {
                     const task = tasks[i]
-                    createAndRenderListItem(task)
-                    console.log('создаем элементы по массиву')
-
-                    
-
+                    createAndRenderListItem ( task )
+                    console.log ( 'создаем элементы по массиву' )
                 }
             },
 
-
-
             createElement () {
-        
                 setItem(addElementToData(getItem("tasks"),createNewTask()),"tasks")
                 
             }
-    
-
         }
     }
 
     window.manager.lsManager = localStorageManager()
     
-   
-
 })()

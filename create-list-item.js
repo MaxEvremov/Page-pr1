@@ -1,21 +1,21 @@
-
-(function() {
+(function () {
     'use strict'
 
-    const appContainer = document.getElementById('app')
     const getLsManager = () => window.manager.lsManager
-    //const { taskDialog } = window.uiElements
-    const { createListItem } = window.listitem
     const getTasks = () => window.task.tasks
-    const { getRandomId } = window.otherlogic
+
+    const { createListItem } = window.listitem
     const { deleteValues } = window.otherlogic
 
+    const appContainer = document.getElementById('app')
+
+    
     const grabTaskData = () => {
-        const titleinput = document.getElementById('titleform')
+        const titleinput = document.getElementById ('titleform')
         const title = titleinput.value
-        const dateinput = document.getElementById('dateform')
+        const dateinput = document.getElementById ('dateform')
         const date = dateinput.value
-        const textinput = document.getElementById('textform')
+        const textinput = document.getElementById ('textform')
         const text = textinput.value
 
         return {
@@ -45,11 +45,11 @@
         const lsManager = getLsManager()
         const tasks = getTasks()
 
-        lsManager.setItem('tasks', tasks)
+        lsManager.setItem( 'tasks' , tasks)
     }
 
     const onAllDeleteClick = () => {
-        let a = document.getElementsByClassName("todo-list__item")
+        let a = document.getElementsByClassName ( "todo-list__item" )
         console.log(a)
         console.log(a.length)
         for ( let i = a.length -1; i!==-1 ; i--){
@@ -58,10 +58,7 @@
             a[i].remove()
         }
         localStorage.clear()
-
     }
-
-    window.listitem.createAndRenderListItem = createAndRenderListItem
 
     const addbutton = document.getElementById('111')
     addbutton.addEventListener("click",onAddClick)
@@ -72,12 +69,13 @@
     const deleteAllbutton = document.getElementById('333')
     deleteAllbutton.addEventListener("click", onAllDeleteClick)
     
-
     function Task(title, date, text) {
         this.id = Date.now()
         this.title = title
         this.date = date
         this.text = text
     }
+
+    window.listitem.createAndRenderListItem = createAndRenderListItem
 
 })();

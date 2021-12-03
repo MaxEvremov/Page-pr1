@@ -1,5 +1,4 @@
-
-(function() {
+(function () {
     'use strict'
 
     const getLsManager = () => window.manager.lsManager
